@@ -1,0 +1,16 @@
+.hero-inner {
+  width: 600px;
+  height: 400px;
+  border-radius: 15px;
+  margin-top: 50px;
+  box-shadow: 2px 13px 32px -4px rgb(95 117 124 / 32%);
+}
+
+.hero-btn {
+  background: red !important;
+  border: none;
+  color: #fff;
+  border-radius: 10px;
+  width: 63px;
+  height: 33px;
+}
