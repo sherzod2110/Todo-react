@@ -5,6 +5,9 @@ const Hero = () => {
   const [author, setAuthor] = useState("");
   const [price, setPrice] = useState("");
 
+
+  // const [dark,setDark] =useState
+
   const [data, setData] = useState([
     { id: 1, isname: "Martin Iden", author: "Jack London", price: 222 },
   ]);
@@ -31,8 +34,13 @@ const Hero = () => {
       setIsName("");
       setPrice("");
     }
+  };
 
-    removeItem();
+  const deleteItem = (item) => {
+    const fiterItem = data.filter((obj) => {
+      return obj.id != item;
+    });
+    setData(fiterItem)
   };
 
   console.log(data);
@@ -83,7 +91,8 @@ const Hero = () => {
               </thead>
 
               <div className="flex-column justify-content-around align-items-center mt-2">
-                {data.map((item, idx) => {
+                {
+                data.map((item, idx) => {
                   return (
                     <div
                       className="d-flex justify-content-between mx-5 list"
@@ -97,12 +106,7 @@ const Hero = () => {
                         {item.author}
                       </p>
                       <p>
-                        <button
-                          className="hero-btn"
-                          onClick={() => remove(data)}
-                        >
-                          Delete
-                        </button>
+                        <button className="hero-btn" onClick={()=>{deleteItem(item.id)}}>Delete</button>
                       </p>
                     </div>
                   );
